@@ -65,4 +65,11 @@ public class Restaurant {
         return name;
     }
 
+    public double caluclateOrderValue(){
+        double val=0;
+        for(Item item: menu) {
+            val =val + item.getPrice();
+        }
+        return val;
+    }
 }

@@ -68,4 +68,13 @@ class RestaurantTest {
                 ()->restaurant.removeFromMenu("French fries"));
     }
     //<<<<<<<<<<<<<<<<<<<<<<<MENU>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+    @Test
+    public void calulating_order_value_result_should_be_500(){
+
+        restaurant.addToMenu("Sweet corn soup",100);
+        restaurant.addToMenu("Vegetable lasagne", 400);
+        double order_value;
+        order_value=restaurant.caluclateOrderValue();
+        assertEquals(500,order_value);
+    }
 }
