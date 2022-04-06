@@ -3,6 +3,8 @@ import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
 import java.time.LocalTime;
+import java.util.ArrayList;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -72,9 +74,16 @@ class RestaurantTest {
     public void calulating_order_value_result_should_be_500(){
 
         restaurant.addToMenu("Sweet corn soup",100);
-        restaurant.addToMenu("Vegetable lasagne", 400);
+        restaurant.addToMenu("Vegetable lasagne", 200);
+        restaurant.addToMenu("Lassi", 400);
+
+        List<String> selectedItems = new ArrayList<String>();
+        selectedItems.add("Sweet corn soup");
+        selectedItems.add("Lassi");
+
+
         double order_value;
-        order_value=restaurant.caluclateOrderValue();
+        order_value=restaurant.calculateOrderValue(selectedItems);
         assertEquals(500,order_value);
     }
 }

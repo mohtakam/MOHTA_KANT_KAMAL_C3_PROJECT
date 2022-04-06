@@ -65,10 +65,11 @@ public class Restaurant {
         return name;
     }
 
-    public double caluclateOrderValue(){
+    public double calculateOrderValue( List<String> selectedItem){
         double val=0;
-        for(Item item: menu) {
-            val =val + item.getPrice();
+        for(String itemName : selectedItem) {
+            Item item = findItemByName(itemName);
+            val = val + item.getPrice();
         }
         return val;
     }
