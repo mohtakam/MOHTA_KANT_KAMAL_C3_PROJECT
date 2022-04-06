@@ -60,6 +60,7 @@ class RestaurantTest {
     }
     @Test
     public void removing_item_that_does_not_exist_should_throw_exception() {
+
         restaurant.addToMenu("Sweet corn soup",119);
         restaurant.addToMenu("Vegetable lasagne", 269);
 
